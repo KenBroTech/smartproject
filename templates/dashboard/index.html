@@ -1,0 +1,40 @@
+{% extends 'partials/base.html' %}
+{% block title %}Home Page {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Meter ID</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Region</th>
+                    <th class="text-center" scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                    {% for data in data %}
+                    {% if data.location != 'Invalid Location'%}
+                  <tr>
+                    <td>
+                      {% if red_alert < 10 %}
+                      <i class="fas fa-exclamation-triangle text-danger">
+                      {% endif %}
+                      </i> {{ data.meter_id }}</td>
+                    <td>{{ data.location }}</td>
+                    <td>{{ data.region }}</td>
+                    <td class="text-center">
+                        <a class="btn btn-info btn-sm mx-1" href="{% url 'dashboard-detail' data.id %}">View Detail</a>
+                    </td>
+                  </tr>
+                    {% endif %}
+                    {% endfor %} 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

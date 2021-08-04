@@ -1,0 +1,38 @@
+{% extends 'partials/base.html' %} 
+{% block title %}Detail Page {% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row mt-4">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">
+            <a class="" href="{% url 'dashboard-index' %}"
+              ><i class="fas fa-arrow-alt-circle-left text-light fa-2x"></i
+            ></a>
+          </th>
+        </tr>
+      </thead>
+    </table>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          {% if data.meter_id == '2323412' %}
+          <iframe
+            width="450"
+            height="260"
+            style="border: 1px solid #cccccc"
+            src="https://thingspeak.com/channels/1180825/charts/1?dynamic=true&results=50&title=Current+Consumption+Chart&type=step&xaxis=Time&yaxis=Current&yaxismin=0"
+          ></iframe>
+          {% else %}
+          <marquee behavior="" direction="">
+            <h3>No Data Available</h3>
+          </marquee>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">{{ m|safe }}</div>
+  </div>
+</div>
+{% endblock %}

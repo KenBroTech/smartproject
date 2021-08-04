@@ -1,0 +1,22 @@
+{% extends 'partials/base.html' %}
+{% block title %}Add Meter Page{% endblock %}
+{% load crispy_forms_tags %} 
+{% block content %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h4>Add Meter</h4>
+                    <hr>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <input class="btn btn-success" type="submit" value="Register">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
