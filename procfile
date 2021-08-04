@@ -1,1 +1,0 @@
-web: gunicorn smartproject.wsgi --log-file -
