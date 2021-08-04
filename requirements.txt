@@ -125,9 +125,6 @@ pyttsx3==2.90
 PyTweening==1.0.3
 pytz==2020.4
 pywhatkit==3.9
-#pywin32==228
-#pywin32-ctypes==0.2.0
-#pywinpty==0.5.7
 PyYAML==5.4.1
 pyzmq==22.0.3
 ratelim==0.1.6
